@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.budbee.com/
+docs: https://developer.budbee.com/
+provider: Instabee
+providerId: instabee
+summary:
+  types:
+  - http
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - clientCredentials
+notes: >-
+  Developer credentials (separate key pairs for sandbox and production) are issued by Budbee on
+  request via onboarding@budbee.com. Merchant OAuth2 for Webhooks V2 is configured in the partner
+  portal at partner.instabee.com.
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: >-
+    Primary API authentication. HTTP Basic with the API key as username and API secret as password,
+    sent as Authorization: Basic base64(apiKey:apiSecret) over TLS.
+  sources:
+  - https://developer.budbee.com/
+- name: webhookOAuth2
+  type: oauth2
+  scheme: bearer
+  description: >-
+    Optional OAuth2 client-credentials authentication for outbound Webhooks V2 callbacks. The
+    merchant configures a token endpoint URL, client ID/secret and optional scopes in the partner
+    portal; Budbee obtains a bearer token and sends Authorization: Bearer <access_token> on callbacks.
+  flows:
+  - flow: clientCredentials
+  sources:
+  - https://developer.budbee.com/
+- name: presignedUrl
+  type: apiKey
+  in: query
+  description: >-
+    Shipping-label URLs are pre-signed with query-string HMAC-SHA256 signatures (X-Budbee-Algorithm,
+    X-Budbee-Date, X-Budbee-Expires, X-Budbee-Signature), valid for 48 hours. Parameters are already
+    percent-encoded and must not be re-encoded.
+  sources:
+  - https://developer.budbee.com/
+webhook_signature:
+  header: X-Budbee-Signature
+  algorithm: HMAC-SHA1
+  description: >-
+    Inbound webhook payloads are signed with a SHA-1 HMAC of the request body using the merchant's
+    secret API key, for integrity verification.
