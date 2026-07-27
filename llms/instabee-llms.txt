@@ -1,0 +1,30 @@
+# Instabee
+
+> Instabee is a European last-mile logistics technology company (formed by the 2022 merger of Instabox and Budbee) operating the Instabox, Budbee and Porterbuddy delivery brands across the Nordics and Benelux. It exposes a public REST developer API under the Budbee brand for delivery orders, delivery intervals, locker/box discovery, shipping labels, returns and parcel-status webhooks.
+
+## APIs
+
+- [Budbee Delivery API](https://developer.budbee.com/): Create and manage delivery orders, book home/locker delivery intervals, validate postal codes, discover lockers, generate shipping labels, book returns, and subscribe to parcel-status webhooks. Production base URL https://api.budbee.com, sandbox https://api.staging.budbee.com.
+
+## Docs
+
+- [Developer Portal / API Reference](https://developer.budbee.com/): Full Budbee API reference, authentication, rate limits, versioning and webhooks.
+- [Partner Portal](https://partner.instabee.com/): Merchant account settings and Webhooks V2 configuration.
+
+## Artifacts
+
+- [Authentication](authentication/instabee-authentication.yml): HTTP Basic (apiKey:apiSecret), OAuth2 for Webhooks V2, pre-signed label URLs.
+- [Rate Limits](rate-limits/instabee-rate-limits.yml): Three tiers per 5-minute window (300 POST / 1000 GET / 5000 validation).
+- [Webhooks](asyncapi/instabee-webhooks.yml): Parcel lifecycle events (V2) and classic per-topic webhooks, HMAC-SHA1 signed.
+- [Error Catalog](errors/instabee-problem-types.yml): Documented HTTP status semantics.
+- [Conventions](conventions/instabee-conventions.yml): Media-type versioning, Unix-ms dates, forward-compatibility rules.
+- [Lifecycle](lifecycle/instabee-lifecycle.yml): Media-type versioning and 6-month deprecation window.
+- [Sandbox](sandbox/instabee-sandbox.yml): Staging environment and per-environment credentials.
+
+## About
+
+- [Instabee](https://instabee.com/): Company site.
+- [Careers](https://career.instabee.com/)
+- [Press](https://press.instabee.com/)
+- [Terms & Conditions](https://instabee.com/legal/general-terms-conditions)
+- [Privacy Notice](https://instabee.com/legal/external-privacy-notice)

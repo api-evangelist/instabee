@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.budbee.com/
+provider: Instabee
+providerId: instabee
+type: Conventions
+description: Cross-cutting request/response semantics for the Budbee Delivery API.
+authentication:
+  style: HTTP Basic (apiKey:apiSecret); OAuth2 client-credentials for Webhooks V2
+  transport: TLS/HTTPS required
+  ref: authentication/instabee-authentication.yml
+versioning:
+  scheme: media-type
+  mechanism: >-
+    Endpoint version is selected via the Content-Type request header using vendor media types, e.g.
+    application/vnd.budbee.multiple.orders-v2+json.
+  deprecation_window: Deprecated endpoint versions supported for at least 6 months.
+  ref: lifecycle/instabee-lifecycle.yml
+idempotency:
+  supported: false
+  notes: No idempotency-key mechanism is documented in the Budbee API reference.
+pagination:
+  supported: false
+  notes: No pagination mechanism is documented; collection endpoints return full result sets.
+dates:
+  format: Unix Epoch milliseconds
+  exceptions: Returns endpoints use ISO 8601
+  timezone: UTC (GMT+0)
+forward_compatibility:
+  unknown_fields: Clients must ignore unknown JSON fields for forward compatibility.
+error_envelope:
+  style: Standard HTTP status codes (400/401/403/404/422/429/500/502/503)
+  ref: errors/instabee-problem-types.yml
+rate_limit_signaling:
+  throttle_status: 429
+  window: 5-minute rolling window, three tiers by request class
+  ref: rate-limits/instabee-rate-limits.yml
+webhooks:
+  signature_header: X-Budbee-Signature (HMAC-SHA1 of body with secret API key)
+  retry: 10 attempts at 30-minute intervals; subscription deleted after exhaustion
+  ref: asyncapi/instabee-webhooks.yml

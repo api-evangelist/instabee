@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.budbee.com/
+provider: Instabee
+providerId: instabee
+type: ErrorCatalog
+format: http-status
+description: >-
+  Budbee returns standard HTTP status codes. Documented status semantics from the Budbee API
+  reference; the API does not document an RFC 9457 problem+json envelope.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: The request is malformed.
+- status: 401
+  title: Unauthorized
+  meaning: The API key is wrong or missing.
+- status: 403
+  title: Forbidden
+  meaning: One or more supplied fields have invalid values.
+- status: 404
+  title: Not Found
+  meaning: The requested resource (order, postal code, parcel) does not exist.
+- status: 422
+  title: Validation Error
+  meaning: A supplied value cannot be parsed.
+- status: 429
+  title: Too Many Requests
+  meaning: Rate limit for the request tier exceeded within the 5-minute window.
+- status: 500
+  title: Internal Server Error
+  meaning: Server-side problem; retry later.
+- status: 502
+  title: Service Unavailable
+  meaning: Temporarily offline for maintenance.
+- status: 503
+  title: Service Unavailable
+  meaning: Temporarily offline for maintenance.
+success_codes:
+- status: 200
+  meaning: Successful request with response body.
+- status: 204
+  meaning: Successful request with no content (e.g. order cancellation).

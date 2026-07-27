@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.budbee.com/
+provider: Instabee
+providerId: instabee
+type: Sandbox
+description: >-
+  Budbee provides a dedicated staging (sandbox) environment separate from production. Developers
+  receive distinct API key pairs per environment; onboarding issues sandbox credentials on request.
+environments:
+- name: sandbox
+  base_url: https://api.staging.budbee.com
+  credentials: Separate sandbox API key/secret pair issued via onboarding@budbee.com
+- name: production
+  base_url: https://api.budbee.com
+  credentials: Separate production API key/secret pair issued via onboarding@budbee.com
+notes: >-
+  Environment separation is by credential + host, not by a key prefix. No published magic test
+  identifiers, test postal codes, or fixture triggers were found in the public documentation.
+onboarding_contact: onboarding@budbee.com

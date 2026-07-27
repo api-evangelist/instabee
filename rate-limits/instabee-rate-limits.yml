@@ -1,0 +1,33 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Instabee
+providerId: instabee
+generated: '2026-07-19'
+method: searched
+source: https://developer.budbee.com/
+created: '2026-07-19'
+modified: '2026-07-19'
+tags:
+- Rate Limiting
+- Logistics
+description: >-
+  Budbee API rate limits are enforced per 5-minute rolling window across three tiers by request
+  class. Exceeding a tier returns HTTP 429 until the request rate drops below the threshold.
+responseCodes:
+  throttled: 429
+limits:
+- name: Tier 1 (POST / write requests)
+  scope: api_key
+  metric: requests_per_5_minutes
+  limit: 300
+  timeFrame: 5_minutes
+- name: Tier 2 (GET / read requests)
+  scope: api_key
+  metric: requests_per_5_minutes
+  limit: 1000
+  timeFrame: 5_minutes
+- name: Tier 3 (validation GET requests)
+  scope: api_key
+  metric: requests_per_5_minutes
+  limit: 5000
+  timeFrame: 5_minutes

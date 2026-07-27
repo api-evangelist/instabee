@@ -1,8 +1,27 @@
 aid: instabee
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/instabee.png
 name: Instabee
-description: 'Instabee is a company surfaced as a portfolio company of eqt-ventures and added to the API
-  Evangelist network as a stub for enrichment. Sector: retail. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Instabee is a European last-mile logistics technology company formed by the 2022 merger of Instabox
+  and Budbee, operating consumer delivery brands Instabox (Sweden, Denmark, Norway), Budbee (Sweden,
+  Denmark, Finland, the Netherlands, Belgium) and Porterbuddy (Norway). It moves tens of millions of
+  parcels a year across parcel lockers, home delivery and returns for 1,150+ merchant clients through
+  45+ parcel terminals, serving 10M+ active users. Instabee exposes a public REST developer API under
+  the Budbee brand for creating and managing delivery orders, booking delivery intervals, discovering
+  lockers/boxes and serviceable postal codes, generating shipping labels, booking returns, and
+  subscribing to parcel-status webhooks across its Nordic and Benelux network.
 url: https://raw.githubusercontent.com/api-evangelist/instabee/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +31,40 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Retail
-apis: []
+- Logistics
+- Last-Mile Delivery
+- Shipping
+- E-commerce
+- Parcel Lockers
+- Returns
+- Nordics
+apis:
+- name: Budbee Delivery API
+  description: >-
+    Budbee's public REST API for e-commerce merchants and integration partners to create delivery
+    orders, book home and locker delivery intervals, validate serviceable postal codes, discover
+    parcel lockers, generate shipping labels, book returns, and receive parcel-status webhooks across
+    Sweden, Denmark, Finland, the Netherlands and Belgium.
+  humanURL: https://developer.budbee.com/
+  baseURL: https://api.budbee.com
+  tags:
+  - Delivery
+  - Logistics
+  - Shipping
+  - Returns
+  properties:
+  - type: APIReference
+    url: https://developer.budbee.com/
+  - type: Authentication
+    url: authentication/instabee-authentication.yml
+  - type: RateLimits
+    url: rate-limits/instabee-rate-limits.yml
+  - type: Webhooks
+    url: asyncapi/instabee-webhooks.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +73,46 @@ maintainers:
 common:
 - type: Website
   url: https://instabee.com/
+- type: DeveloperPortal
+  url: https://developer.budbee.com/
+- type: Documentation
+  url: https://developer.budbee.com/
+- type: APIReference
+  url: https://developer.budbee.com/
+- type: Blog
+  url: https://press.instabee.com/
+- type: Careers
+  url: https://career.instabee.com/
+- type: TermsOfService
+  url: https://instabee.com/legal/general-terms-conditions
+- type: PrivacyPolicy
+  url: https://instabee.com/legal/external-privacy-notice
+- type: Login
+  url: https://partner.instabee.com/
+- type: Authentication
+  url: authentication/instabee-authentication.yml
+- type: RateLimits
+  url: rate-limits/instabee-rate-limits.yml
+- type: Webhooks
+  url: asyncapi/instabee-webhooks.yml
+- type: ErrorCatalog
+  url: errors/instabee-problem-types.yml
+- type: Conventions
+  url: conventions/instabee-conventions.yml
+- type: Lifecycle
+  url: lifecycle/instabee-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/instabee-lifecycle.yml
+- type: Sandbox
+  url: sandbox/instabee-sandbox.yml
+- type: MCPServer
+  url: mcp/instabee-mcp.yml
+- type: DomainSecurity
+  url: security/instabee-domain-security.yml
+- type: LLMsTxt
+  url: llms/instabee-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

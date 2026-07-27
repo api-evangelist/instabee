@@ -1,0 +1,49 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.budbee.com/
+provider: Instabee
+providerId: instabee
+type: Webhooks
+description: >-
+  Budbee delivers parcel lifecycle events to merchant-registered webhook endpoints. Two generations
+  exist -- classic per-topic webhooks and Webhooks V2 (a single subscription carrying typed events,
+  optionally OAuth2-authenticated). Inbound payloads are signed with an X-Budbee-Signature HMAC-SHA1
+  header. Failed deliveries retry 10 times at 30-minute intervals; after exhausting retries the
+  subscription is deleted and must be re-registered.
+transport: https
+auth:
+  signature_header: X-Budbee-Signature
+  signature_algorithm: HMAC-SHA1
+  oauth2: supported (Webhooks V2)
+delivery:
+  expected_response: 200
+  retry_count: 10
+  retry_interval: 30 minutes
+classic_webhook_topics:
+- POST /webhooks/parcel-status-updates
+- POST /webhooks/misses
+- POST /webhooks/cancellations
+- POST /webhooks/delivery-attempt-cancellations
+- POST /webhooks/ratings
+- POST /webhooks/end-customer-edits
+- POST /webhooks/delivery-address-edits
+- POST /webhooks/order-settings-edits
+events_v2:
+- name: PARCEL_CREATED
+- name: SORTED_AT_TERMINAL
+- name: PARCEL_RECALLED
+- name: HOME_DELIVERY_CHANGED
+- name: DELIVERED_TO_CONSUMER
+- name: DELIVERY_FAILED
+- name: DELIVERY_CANCELLED
+- name: RETURN_BOOKED_HOME
+- name: RETURN_HOME_PICKED_UP
+- name: RETURN_HOME_PICK_UP_FAILED
+- name: RETURNED_TO_MERCHANT
+- name: LOCKER_CHANGED
+- name: DELIVERED_TO_LOCKER
+- name: CONSUMER_PICKED_UP_FROM_LOCKER
+- name: INJECTED_IN_LOCKER
+- name: CHANGED_TO_LOCKER_DELIVERY
+- name: CHANGED_TO_HOME_DELIVERY
+- name: DELIVERY_VEHICLE_LOADED

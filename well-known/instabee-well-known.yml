@@ -1,0 +1,20 @@
+generated: '2026-07-19'
+method: searched
+provider: Instabee
+providerId: instabee
+description: >-
+  Probed the standard /.well-known/ discovery surface on the Budbee API and developer hosts. No
+  discovery documents are published (all 404). Absence is recorded as valid negative data.
+hosts:
+- host: https://api.budbee.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://developer.budbee.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
