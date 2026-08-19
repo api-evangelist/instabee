@@ -4,9 +4,8 @@ status: candidate
 source: https://developer.budbee.com/
 provider: Instabee
 providerId: instabee
-description: >-
-  No official hosted/remote MCP server was found for Instabee/Budbee. This is a candidate tool list
-  derived from the documented Budbee Delivery API operations, for a future MCP wrapper.
+description: No official hosted/remote MCP server was found for Instabee/Budbee. This is a candidate tool
+  list derived from the documented Budbee Delivery API operations, for a future MCP wrapper.
 server:
   name: budbee
   transport: http
@@ -62,3 +61,9 @@ tools:
 - name: get_parcel_tracking_url
   description: Get the tracking URL for a parcel.
   source_operation: GET /parcels/{packageId}/tracking-url
+deployment:
+  mode: none
+  verified: derived
+  tools: 17
+  checked: '2026-08-12'
+  source: catalog MCP census
