@@ -64,6 +64,107 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Instabee is a company surfaced as a portfolio company of eqt-ventures and added to the API Evangelist network as a stub for enrichment. Sector: retail. This profile is a lead awaiting the enrichment pipeline.
+Instabee is a European last-mile logistics technology company formed by the 2022 merger of Instabox and Budbee, operating consumer delivery brands Instabox (Sweden, Denmark, Norway), Budbee (Sweden, Denmark, Finland, the Netherlands, Belgium) and Porterbuddy (Norway). It moves tens of millions of parcels a year across parcel lockers, home delivery and returns for 1,150+ merchant clients through 45+ parcel terminals, serving 10M+ active users. Instabee exposes a public REST developer API under the Budbee brand for creating and managing delivery orders, booking delivery intervals, discovering lockers/boxes and serviceable postal codes, generating shipping labels, booking returns, and subscribing to parcel-status webhooks across its Nordic and Benelux network.
 
-Backed by: eqt-ventures — https://instabee.com/
+**Areas:** Company · Retail · Logistics · Last Mile Delivery · Shipping · E-Commerce · Parcel Lockers · Returns · Nordic
+
+## Instabee on APIs.io
+
+Everything profiled for Instabee is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/instabee/](https://apis.io/providers/instabee/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Budbee Delivery API](https://apis.io/apis/instabee/budbee-delivery-api/) — Budbee's public REST API for e-commerce merchants and integration partners to create delivery orders, book home and locker delivery intervals, validate…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Instabee Webhooks](https://apis.io/asyncapis/instabee/instabee-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [budbee](https://apis.io/servers/instabee/budbee/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Instabee Authentication](https://apis.io/security/instabee/instabee-authentication/)
+- [Instabee Domain Security](https://apis.io/security/instabee/instabee-domain-security/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Instabee Rate Limits](https://apis.io/rate-limits/instabee/instabee-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://instabee.com/)
+- [Documentation](https://developer.budbee.com/)
+- [API reference](https://developer.budbee.com/)
+- [Blog](https://press.instabee.com/)
+- [Terms of service](https://instabee.com/legal/general-terms-conditions)
+- [Privacy policy](https://instabee.com/legal/external-privacy-notice)
+
+## API Evangelist rating
+
+**Kin Score 38.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 47.4 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 27.6 |
+
+**Agent readiness 25.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/instabee/](https://apis.io/providers/instabee/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Instabee: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/instabee/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
